@@ -1,0 +1,367 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\ML}{E_{\alpha,\beta}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\title{Counterexamples to Conjecture 25 and Remark 6 of\newline
+Garrappa--Gerhold--Popolizio--Simon\\[4pt]
+\large Global modulus lower bounds in arXiv:2410.11852v4}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{2 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Conjecture 25 and the question in Remark 6 of Garrappa, Gerhold,
+Popolizio and Simon, arXiv:2410.11852v4, both have negative answers.
+For every $1<\alpha<2$, the proposed Mittag--Leffler modulus lower
+bound fails at $\beta=\alpha-1$, and at one fixed nonreal point it
+continues to fail on a closed interval
+$[\alpha-1,\alpha-1+\varepsilon]$ with $\varepsilon>0$.
+A Hankel-contour expansion gives this family, while an exact rational
+certificate supplies the explicit instance
+$(\alpha,\beta,z)=(3/2,1/2,-115+10i)$.
+The Kummer question has the elementary witness
+$M(1/2,-3/2,z)=e^z(1-4z/3+4z^2/3)$.
+\end{abstract}
+
+\section{The two questions}
+Conjecture 25 of \cite[p.~18]{ggps} (journal p.~22) concerns the entire function
+\begin{equation}\label{eq:series}
+ E_{\alpha,\beta}(z)=\sum_{k=0}^{\infty}
+ \frac{z^k}{\Gamma(\alpha k+\beta)},\qquad \alpha>0,
+\end{equation}
+where $1/\Gamma$ is zero at the nonpositive integers.
+Write $G(\alpha,\beta)$ for the assertion
+\begin{equation}\label{eq:global}
+ |E_{\alpha,\beta}(z)|\ge E_{\alpha,\beta}(\Rea z)
+ \quad\text{for every }z\in\mathbb C.
+\end{equation}
+For $1<\alpha<2$ and $\beta\ge0$, the conjecture proposes
+\begin{equation}\label{eq:conj}
+ G(\alpha,\beta)\quad\Longleftrightarrow\quad
+ \alpha-1\le\beta\le\alpha\quad\Longleftrightarrow\quad
+ 1/E_{\alpha,\beta}\text{ is completely monotone on }(0,\infty).
+\end{equation}
+Completely monotone means positive, smooth, and satisfying
+$(-1)^n f^{(n)}(x)\ge0$ for every $n\ge0$ and $x>0$.
+Proposition 3 of \cite{ggps} already establishes the complete
+monotonicity throughout the displayed interval. Our counterexamples
+disprove the implication from that interval to $G$, and hence also
+the implication from complete monotonicity to $G$.
+
+Remark 6 of \cite[p.~6]{ggps} (journal p.~8) asked whether, for all $a,d>0$,
+\begin{equation}\label{eq:kummer-question}
+ |M(a,a-d,z)|\ge M(a,a-d,\Rea z)\quad(z\in\mathbb C).
+\end{equation}
+Here $M(a,b,z)=\sum_{n\ge0}(a)_n z^n/((b)_n n!)$ and
+$b\notin\{0,-1,-2,\ldots\}$; our witness respects this restriction.
+
+\section{A family of Mittag--Leffler counterexamples}
+\begin{theorem}\label{thm:family}
+Fix $1<\alpha<2$ and put
+\[
+ \eta=\frac{\pi(2-\alpha)}4,\qquad
+ t=\tan\eta,\qquad w=-1+it.
+\]
+There is $R>0$ such that for every $r>R$,
+\[
+ |E_{\alpha,\alpha-1}(rw)|<E_{\alpha,\alpha-1}(-r).
+\]
+Moreover, there are one such point $z=rw$ and $0<\varepsilon<1$
+for which
+\begin{equation}\label{eq:interval}
+ |E_{\alpha,\beta}(z)|<E_{\alpha,\beta}(\Rea z)
+ \quad\text{for every }\beta\in[\alpha-1,\alpha-1+\varepsilon].
+\end{equation}
+\end{theorem}
+\begin{proof}
+We first establish the needed exterior-sector expansion, including
+its remainder. Choose $\pi/2<\theta<\pi/\alpha$.
+Let $H_{\theta,\delta}$ run from infinity on the ray
+$\arg u=-\theta$ to $|u|=\delta$, counterclockwise around
+the arc $|u|=\delta$, $-\theta\le\arg u\le\theta$, and back
+to infinity on $\arg u=\theta$. Powers use the principal branch.
+Hankel's formula \cite[Eq.~5.9.2]{hankel}, with its contour deformed
+within the left half-plane at infinity, gives
+\[
+ \frac1{2\pi i}\int_{H_{\theta,\delta}}e^u u^{-s}\,du
+ =\frac1{\Gamma(s)}\qquad(s\in\mathbb C).
+\]
+Taking initially $\delta>|z|^{1/\alpha}$, geometric expansion of
+$(u^\alpha-z)^{-1}$ and integration term by term yield
+\begin{equation}\label{eq:hankel}
+ E_{\alpha,\beta}(z)=\frac1{2\pi i}
+ \int_{H_{\theta,\delta}}
+ \frac{e^u u^{\alpha-\beta}}{u^\alpha-z}\,du.
+\end{equation}
+Indeed, the geometric ratio has modulus at most
+$|z|/\delta^\alpha<1$ everywhere on the contour, and the remaining
+factor is integrable because $\cos\theta<0$.
+If $|\arg z|>\alpha\theta$, then $u^\alpha=z$ has no solution
+in $|\arg u|\le\theta$, since $\alpha\theta<\pi$.
+Thus the contour radius in \eqref{eq:hankel} can be decreased to $1$
+without crossing a pole.
+
+At $\beta=\alpha-1$ the numerator power is $u$. The identity
+\[
+ \frac1{u^\alpha-z}=-\frac1z-\frac{u^\alpha}{z^2}
+ -\frac{u^{2\alpha}}{z^2(u^\alpha-z)}
+\]
+and Hankel's formula show that
+\begin{equation}\label{eq:asymptotic}
+ E_{\alpha,\alpha-1}(z)=\frac{C_\alpha}{z^2}
+ +O(|z|^{-3}),\qquad
+ C_\alpha=-\frac1{\Gamma(-\alpha-1)}
+ =\frac{\alpha(\alpha^2-1)}{\Gamma(2-\alpha)}>0.
+\end{equation}
+The $z^{-1}$ coefficient vanishes because $1/\Gamma(-1)=0$.
+For completeness, on either fixed exterior ray separated from
+$|\arg z|=\alpha\theta$, angular separation gives
+$|u^\alpha-z|\ge c(|u|^\alpha+|z|)$ for some $c>0$.
+The remainder is therefore bounded by
+\[
+ \frac{|z|^{-3}}{2\pi c}
+ \int_{H_{\theta,1}}|e^u|\,|u|^{2\alpha+1}\,|du|,
+\]
+whose integral is finite. This proves the stated error estimate.
+
+Now $\arg w=\pi-\eta>\alpha\pi/2$, so $\theta$ can be
+chosen with $\pi/2<\theta<(\pi-\eta)/\alpha$.
+Both the negative real ray and the ray through $w$ satisfy
+\eqref{eq:asymptotic}. Consequently
+\[
+ r^2 E_{\alpha,\alpha-1}(-r)\longrightarrow C_\alpha,
+ \qquad
+ r^2|E_{\alpha,\alpha-1}(rw)|
+ \longrightarrow\frac{C_\alpha}{|w|^2}
+ =\frac{C_\alpha}{1+t^2}<C_\alpha.
+\]
+Their strictly different limits give the first assertion.
+
+Fix any sufficiently large $r$ and put $z=rw$.
+For fixed $\alpha>0$ and $z$, the series \eqref{eq:series} is
+continuous in $\beta$ near $\alpha-1$.
+To justify this directly, take a compact interval of positive $\beta$
+containing $\alpha-1$ in its interior. Real Stirling asymptotics
+\cite[Eq.~5.11.3]{stirling}, applied to $\alpha k+\beta=\alpha k+O(1)$,
+give a bound
+$1/\Gamma(\alpha k+\beta)\le\exp(-\tfrac\alpha2 k\log k)$
+for all sufficiently large $k$, uniformly on that interval.
+The resulting summable majorant gives locally uniform convergence.
+Thus the strict positive difference
+$E_{\alpha,\beta}(-r)-|E_{\alpha,\beta}(z)|$ remains positive
+in an open neighborhood of $\alpha-1$.
+Choose $\varepsilon$ smaller than both half the neighborhood radius
+and $1/2$. This proves \eqref{eq:interval}.
+\end{proof}
+
+\begin{corollary}\label{cor:cm}
+For every $1<\alpha<2$, there are parameters strictly inside
+$(\alpha-1,\alpha)$ for which $1/E_{\alpha,\beta}$ is completely
+monotone on $(0,\infty)$ but $G(\alpha,\beta)$ is false.
+For the same parameters, the normalized logarithm
+$\log(\Gamma(\beta)E_{\alpha,\beta})$ is a Bernstein function
+on $(0,\infty)$, although $G(\alpha,\beta)$ is false.
+\end{corollary}
+\begin{proof}
+Use Theorem~\ref{thm:family} and Proposition 3 of \cite{ggps}.
+The second assertion uses the exponential representation in
+Remark 4(a) of \cite{ggps}.
+\end{proof}
+
+\section{An explicit rational certificate}
+\begin{proposition}\label{prop:finite}
+At $z_*=-115+10i$,
+\[
+ |E_{3/2,1/2}(z_*)|<\frac{11}{10^6}+\frac4{10^{13}}
+ <\frac3{10^5}-\frac4{10^{13}}<E_{3/2,1/2}(-115).
+\]
+\end{proposition}
+\begin{proof}
+Set $\rho=1/\sqrt\pi$ and let $S(z)$ be the first $64$ terms
+of \eqref{eq:series} for $(\alpha,\beta)=(3/2,1/2)$.
+The half-integer and integer Gamma identities give
+\begin{equation}\label{eq:partial}
+ S(z)=\rho A(z)+B(z),\quad
+ A(z)=\sum_{j=0}^{31}\frac{2^{3j}z^{2j}}{(6j-1)!!},\quad
+ B(z)=\sum_{j=0}^{31}\frac{z^{2j+1}}{(3j+1)!},
+\end{equation}
+with $(-1)!!=1$.
+The rational interval
+\begin{equation}\label{eq:rho}
+ \frac{56418958354775628694}{10^{20}}<\rho<
+ \frac{56418958354775628696}{10^{20}}
+\end{equation}
+and direct rational evaluation of \eqref{eq:partial} give
+\begin{equation}\label{eq:finite-bounds}
+ S(-115)>\frac3{10^5},\qquad
+ |\Rea S(z_*)|<\frac1{10^6},\qquad
+ |\Ima S(z_*)|<\frac1{10^5}.
+\end{equation}
+All rational operations for these inequalities are specified in
+\texttt{verify.py}; their enclosing intervals appear in
+\texttt{verification.json}.
+To obtain \eqref{eq:rho} without decimal assumptions, use
+$\pi=16\arctan(1/5)-4\arctan(1/239)$ and bracket each arctangent
+between its alternating partial sums of lengths $N$ and $N+1$,
+with $N=40$ and $N=12$, respectively.
+If the resulting bounds are $p_-<\pi<p_+$ and the endpoints of
+\eqref{eq:rho} are $L,U$, the exact tests are
+$L^2p_+<1<U^2p_-$.
+The arctangent identity follows by taking tangents:
+$\tan(4\arctan(1/5))=120/119$ and
+$\tan(4\arctan(1/5)-\arctan(1/239))=1$;
+the latter angle is in $(0,\pi/2)$.
+
+It remains to bound the infinite tail. For
+$T_k(z)=z^k/\Gamma(3k/2+1/2)$ and $s=3k/2+1/2$,
+\[
+ T_{k+2}(z)=\frac{z^2 T_k(z)}{s(s+1)(s+2)}.
+\]
+For $|z|\le125$ and $k\ge64$, $s\ge193/2$, and hence
+$|T_{k+2}|\le\tfrac12|T_k|$.
+The exact initial estimates, using $\rho<1$, are
+\[
+ |T_{64}|\le\frac{125^{64}2^{96}}{191!!}<10^{-13},
+ \qquad
+ |T_{65}|\le\frac{125^{65}}{97!}<\frac34\,10^{-13}.
+\]
+Summing the two parity tails gives
+$|E_{3/2,1/2}(z)-S(z)|<4\cdot10^{-13}$.
+Both $-115$ and $z_*$ have modulus below $125$.
+Finally $|S(z_*)|\le|\Rea S(z_*)|+|\Ima S(z_*)|<11/10^6$,
+so \eqref{eq:finite-bounds} gives the asserted strict inequalities.
+\end{proof}
+
+\section{The Kummer question in Remark 6}
+An earlier negative answer appears in the Pudim AI Project's
+14 June 2026 manuscript \cite{kummer-prior}. Its example is
+$a=1$, $d=5/2$: for real $s\to0$, the real-coefficient Kummer series gives
+\[
+ M(1,-3/2,z)=1-\frac23z+\frac43z^2+O(z^3),\qquad
+ |M(1,-3/2,is)|^2=1-\frac{20}{9}s^2+O(s^4).
+\]
+The second expansion is even because
+$M(1,-3/2,-is)=\overline{M(1,-3/2,is)}$.
+Thus the proposed lower bound already fails for sufficiently small
+nonzero $s$. The next identity gives a different, exact-zero witness.
+
+\begin{proposition}\label{prop:kummer}
+The universal inequality \eqref{eq:kummer-question} fails for
+$a=1/2$, $d=2$, and $z_0=1/2+i\sqrt2/2$.
+\end{proposition}
+\begin{proof}
+Since $b=a-d=-3/2$ is not a nonpositive integer, all coefficients
+are defined. Cancellation of rising factorials gives, for every $n\ge0$,
+\[
+ \frac{(1/2)_n}{(-3/2)_n}
+ =\frac{(n-3/2)(n-1/2)}{(-3/2)(-1/2)}
+ =1-\frac43n+\frac43n(n-1).
+\]
+The cancellation can also be read from
+$(-3/2)_{n+2}=(-3/2)_2(1/2)_n
+=(-3/2)_n(n-3/2)(n-1/2)$, which covers $n=0,1$ as well.
+Absolute convergence and the exponential series therefore yield
+\[
+ M(1/2,-3/2,z)
+ =e^z\left(1-\frac43z+\frac43z^2\right).
+\]
+The quadratic vanishes at $z_0$, whereas its value at $\Rea z_0=1/2$
+is $2/3$. Thus
+\[
+ |M(1/2,-3/2,z_0)|=0<\frac23e^{1/2}
+ =M(1/2,-3/2,1/2).
+\]
+\end{proof}
+
+\section{Coverage and exact formal statements}
+The locators in Table~\ref{tab:coverage} refer to arXiv:2410.11852v4.
+The questions and the complete monotonicity theorem are due to
+Garrappa, Gerhold, Popolizio and Simon \cite{ggps}.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}p{0.25\textwidth}p{0.69\textwidth}@{}}
+\toprule
+Source item & Coverage \\
+\midrule
+Conjecture 25, p.~18 & Refuted by Theorem~\ref{thm:family}; an explicit
+instance is Proposition~\ref{prop:finite}. The complete-monotonicity
+sufficiency implication fails by Corollary~\ref{cor:cm}. \\
+Remark 6, p.~6, (2.4) & The earlier local refutation is in
+\cite{kummer-prior}; Proposition~\ref{prop:kummer} gives an exact zero
+with admissible denominator parameter $-3/2$. \\
+Corollary 7, pp.~6--7 & Its stated range is
+$\beta\in(\alpha-1,\alpha]$, excluding the endpoint.
+Our interior failures do not contradict its compact-exception conclusion. \\
+Discussion, p.~18 & The sentence extending that compact-exception
+conclusion to $[\alpha-1,\alpha]$ fails at $\beta=\alpha-1$:
+Theorem~\ref{thm:family} gives an unbounded ray of failures. \\
+Proposition 3; Remark 4(a); discussion, p.~19 & Complete monotonicity,
+and the Bernstein property of the normalized logarithm, do not imply
+the global modulus bound; see Corollary~\ref{cor:cm}. \\
+Proposition 9 & Its right-half-plane
+lower bounds are compatible with our left-half-plane examples. \\
+Remark 2(b); Remark 8; Remark 16(a); Remark 20(a); Conjecture 26
+& The zero classifications, the real-zero-count question, global convexity
+of $h$, the generalized-cosine constant, and the $\alpha\ge2$
+classification are not settled by these arguments. \\
+\bottomrule
+\end{tabular}
+\caption{Statements answered and neighboring questions distinguished.}
+\label{tab:coverage}
+\end{table}
+
+The formal statements are in two commit-pinned Lean files:
+\begin{itemize}
+\item \href{https://github.com/the-omega-institute/trureturing/blob/31e6846798fc7b0349538fb9792b6d53d3f60566/D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.lean}{\texttt{MittagLefflerModulusRefutation.lean}}.\par
+The declaration \texttt{source\_closed\_beta\_family} states
+\eqref{eq:interval} for every $1<\alpha<2$, conditional on
+\texttt{IsSourceSeries E}; \texttt{result} proves
+$\neg\texttt{claim}$, including the source-series definitions and
+the equivalences in \eqref{eq:conj}.
+\item \href{https://github.com/the-omega-institute/trureturing/blob/31e6846798fc7b0349538fb9792b6d53d3f60566/D5/S3/Analytic/KummerModulusLowerBound/Result.lean}{\texttt{KummerModulusLowerBound/Result.lean}}.\par
+Its declaration \texttt{result} disproves the universal Kummer inequality
+for $a,d>0$ with $a-d$ outside the nonpositive integers.
+\end{itemize}
+The contour expansion, continuity argument and all-index Kummer calculation
+above are written proofs. The $64$-term inequalities and tail premises in
+Proposition~\ref{prop:finite} are exact rational checks. The supplementary
+$101$ Kummer coefficient checks illustrate the identity; its proof for
+every index is the algebraic argument in Proposition~\ref{prop:kummer}.
+
+\begin{thebibliography}{9}
+\bibitem{ggps}
+R.~Garrappa, S.~Gerhold, M.~Popolizio and T.~Simon,
+\emph{On some inequalities for the two-parameter Mittag--Leffler function
+in the complex plane}, J. Math. Anal. Appl. \textbf{551}(1) (2025),
+129588. \href{https://doi.org/10.1016/j.jmaa.2025.129588}{doi:10.1016/j.jmaa.2025.129588}.
+\href{https://arxiv.org/abs/2410.11852v4}{arXiv:2410.11852v4},
+especially Remark 6 and Conjectures 25--26.
+\bibitem{kummer-prior}
+Pudim AI Project,
+\emph{Zeta-Law Entropy, Gamma Curvature, and Laplace-Measure Applications},
+version v016, 14 June 2026, counterexample headed
+``Kummer M global modulus inequality fails at $(\alpha,\beta)=(1,5/2)$''.
+\href{https://github.com/pudim-project/pudim-ai-demo-zetalaw/blob/d424fdf5c1973128603c798140d9af8d388679a2/theory/versions/v016/THEORY_v016.tex}{Commit-pinned manuscript}.
+\bibitem{hankel}
+NIST Digital Library of Mathematical Functions,
+\emph{Gamma function: integral representations},
+\href{https://dlmf.nist.gov/5.9.E2}{Eq.~5.9.2 (Hankel's loop integral)}.
+\bibitem{stirling}
+NIST Digital Library of Mathematical Functions,
+\emph{Gamma function: asymptotic expansions},
+\href{https://dlmf.nist.gov/5.11.E3}{Eq.~5.11.3 (Stirling's formula)}.
+\end{thebibliography}
+\noindent\small\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.
+\end{document}

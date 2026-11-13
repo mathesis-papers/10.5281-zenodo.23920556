@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Counterexamples to Conjecture 25 and Remark 6 of Garrappa–Gerhold–Popolizio–Simon: Global modulus lower bounds in arXiv:2410.11852v4"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-05"
+version: "1"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/ggps2025?version=1"
+doi: "10.5281/zenodo.23920557"
+license: "CC-BY-4.0"

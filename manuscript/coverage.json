@@ -1,0 +1,15 @@
+{
+  "posing_source_url": "https://arxiv.org/abs/2410.11852v4",
+  "posing_locators": ["Conjecture 25, page 18; journal page 22", "Remark 6, page 6, equation (2.4); journal page 8"],
+  "formal_source_urls": [
+    "https://github.com/the-omega-institute/trureturing/blob/31e6846798fc7b0349538fb9792b6d53d3f60566/D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.lean",
+    "https://github.com/the-omega-institute/trureturing/blob/31e6846798fc7b0349538fb9792b6d53d3f60566/D5/S3/Analytic/KummerModulusLowerBound/Result.lean"
+  ],
+  "written_proofs": ["exterior-sector Hankel expansion", "unbounded endpoint failure rays", "closed parameter interval of failures", "all-index Kummer coefficient identity"],
+  "finite_checks": ["64-term rational enclosures and tail premises at alpha=3/2, beta=1/2, z=-115+10i", "101 supplementary Kummer coefficient instances"],
+  "lean_declarations": [
+    "D5.S3.Analytic.Asymptotics.MittagLefflerModulusRefutation.source_closed_beta_family",
+    "D5.S3.Analytic.Asymptotics.MittagLefflerModulusRefutation.result",
+    "D5.S3.Analytic.KummerModulusLowerBound.Result.result"
+  ]
+}

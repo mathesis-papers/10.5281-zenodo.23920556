@@ -1,0 +1,14 @@
+{
+  "schema": "mathesis.materials.v1",
+  "work": "ggps2025",
+  "version": 1,
+  "repository_url": "https://github.com/mathesis-papers/6aec38570572f4d53e4f1556",
+  "site_url": "https://papers.trureturing.org/6aec38570572f4d53e4f1556/",
+  "doi": "10.5281/zenodo.23920557",
+  "reading": {
+    "en": "https://papers.trureturing.org/6aec38570572f4d53e4f1556/en/",
+    "zh": "https://papers.trureturing.org/6aec38570572f4d53e4f1556/zh/"
+  },
+  "slides": [],
+  "visualizations": []
+}

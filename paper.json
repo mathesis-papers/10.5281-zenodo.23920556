@@ -1,0 +1,62 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 84360,
+      "matches_public": null,
+      "path": "paper.pdf",
+      "public_sha256": null,
+      "sha256": "c7db31e8aa41e264144dab37ad4eb3756f6e82a21346a3d0edfef8407133adbe"
+    },
+    "source": {
+      "bytes": 94345,
+      "matches_public": null,
+      "path": "manuscript/",
+      "public_sha256": null,
+      "sha256": "04db4d84ada6184ca8b0deaaa870a6f111aff5ece8d8f670ff8f4d86ec4c4d83"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "Conjecture 25 and the question in Remark 6 of Garrappa, Gerhold, Popolizio and Simon, arXiv:2410.11852v4, both have negative answers. For every 1<alpha<2, the proposed Mittag–Leffler modulus lower bound fails at beta=alpha-1, and at one fixed nonreal point it continues to fail on a closed interval [alpha-1,alpha-1+epsilon] with epsilon>0. A Hankel-contour expansion gives this family, while an exact rational certificate supplies the explicit instance (alpha,beta,z)=(3/2,1/2,-115+10i). The Kummer question has the elementary witness M(1/2,-3/2,z)=exp(z)(1-4z/3+4z^2/3).",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": "10.5281/zenodo.23920556",
+    "current_version": 1,
+    "doi": "10.5281/zenodo.23920557",
+    "lean_source": {
+      "revision": "31e6846798fc7b0349538fb9792b6d53d3f60566",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/31e6846798fc7b0349538fb9792b6d53d3f60566/D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "url": "/api/v1/collected-papers/ggps2025/files/pdf?version=1"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-05T08:03:35.722872879Z",
+    "record": "ggps2025",
+    "repository_name": "6aec38570572f4d53e4f1556",
+    "source": {
+      "url": "/api/v1/collected-papers/ggps2025/files/source?version=1"
+    },
+    "title": "Counterexamples to Conjecture 25 and Remark 6 of Garrappa–Gerhold–Popolizio–Simon: Global modulus lower bounds in arXiv:2410.11852v4",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-05T08:03:35.722872879Z",
+        "revision": "1",
+        "version": 1
+      }
+    ],
+    "work": "ggps2025"
+  }
+}

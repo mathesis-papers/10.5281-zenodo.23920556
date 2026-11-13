@@ -1,0 +1,45 @@
+{
+  "status": "pass",
+  "arithmetic": "exact rational arithmetic",
+  "mittag_leffler": {
+    "alpha": "3/2",
+    "beta": "1/2",
+    "point": "-115+10i",
+    "partial_terms": 64,
+    "rho_interval": [
+      "28209479177387814347/50000000000000000000",
+      "7052369794346953587/12500000000000000000"
+    ],
+    "partial_axis_interval": [
+      "92505162023/2500000000000000",
+      "92507838829/2500000000000000"
+    ],
+    "partial_point_real_interval": [
+      "-9628631101/10000000000000000",
+      "-9626762303/10000000000000000"
+    ],
+    "partial_point_imaginary_interval": [
+      "-89102285761/10000000000000000",
+      "-17818302249/2000000000000000"
+    ],
+    "tail_upper_bound": "1/2500000000000",
+    "axis_strict_lower_bound": "74999999/2500000000000",
+    "point_strict_modulus_upper_bound": "27500001/2500000000000",
+    "gap_strict_lower_bound": "23749999/1250000000000"
+  },
+  "kummer": {
+    "a": "1/2",
+    "b": "-3/2",
+    "point": "1/2+i*sqrt(2)/2",
+    "polynomial_zero": true,
+    "real_polynomial_value": "2/3",
+    "coefficient_identity_finite_checks": 101,
+    "all_coefficient_identity": "proved algebraically in note.tex",
+    "earlier_local_witness": {
+      "a": "1",
+      "b": "-3/2",
+      "modulus_squared_quadratic_coefficient": "-20/9"
+    }
+  },
+  "analytic_coverage": "The contour expansion, parameter continuity, and all-index Kummer identity are written proofs in note.tex."
+}
