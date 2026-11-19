@@ -1,5 +1,3 @@
-<style>pre:has(> code[class*="typst"]) { display: none; }</style>
-
 # 来源与贡献
 
 本书解释 Haobo Ma（Chrono AI，Singapore）与 Wenlin Zhang（National University of Singapore 及 Chrono AI，Singapore）的原文第 1 版。作者姓名沿用公开记录。
@@ -29,6 +27,10 @@
 
 贡献者可先在对应请求协调具体范围，再从自己的 fork 向 [trureturing 的 dev 分支](https://github.com/the-omega-institute/trureturing/blob/dev/docs/CONTRIBUTING.md)提交聚焦的 PR，遵守其现行审核与准入规则。请求登记本身不是证明。
 
+<section hidden="hidden">
+
 ```{=typst}
 #pagebreak()
 ```
+
+</section>

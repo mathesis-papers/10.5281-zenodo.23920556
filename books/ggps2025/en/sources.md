@@ -1,5 +1,3 @@
-<style>pre:has(> code[class*="typst"]) { display: none; }</style>
-
 # Sources and contributions
 
 This reading explains version 1 of the paper by Haobo Ma (Chrono AI, Singapore) and Wenlin Zhang (National University of Singapore and Chrono AI, Singapore). Author names follow the public record.
@@ -29,6 +27,10 @@ The following shared requests reuse existing constructions. They distinguish man
 
 Coordinate a precise scope on the relevant request, then submit a focused contributor-fork PR directly to [trureturing dev](https://github.com/the-omega-institute/trureturing/blob/dev/docs/CONTRIBUTING.md) under its current review and admission rules. Request registration is not proof evidence.
 
+<section hidden="hidden">
+
 ```{=typst}
 #pagebreak()
 ```
+
+</section>
