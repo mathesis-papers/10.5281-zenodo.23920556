@@ -2,16 +2,16 @@
   "files": {
     "pdf": {
       "bytes": 84360,
-      "matches_public": null,
+      "matches_public": true,
       "path": "paper.pdf",
-      "public_sha256": null,
+      "public_sha256": "c7db31e8aa41e264144dab37ad4eb3756f6e82a21346a3d0edfef8407133adbe",
       "sha256": "c7db31e8aa41e264144dab37ad4eb3756f6e82a21346a3d0edfef8407133adbe"
     },
     "source": {
       "bytes": 94345,
-      "matches_public": null,
+      "matches_public": true,
       "path": "source.archive",
-      "public_sha256": null,
+      "public_sha256": "04db4d84ada6184ca8b0deaaa870a6f111aff5ece8d8f670ff8f4d86ec4c4d83",
       "sha256": "04db4d84ada6184ca8b0deaaa870a6f111aff5ece8d8f670ff8f4d86ec4c4d83"
     }
   },
@@ -38,6 +38,8 @@
     "license": "CC-BY-4.0",
     "msc": [],
     "pdf": {
+      "bytes": 84360,
+      "sha256": "c7db31e8aa41e264144dab37ad4eb3756f6e82a21346a3d0edfef8407133adbe",
       "url": "/api/v1/collected-papers/ggps2025/files/pdf?version=1"
     },
     "previous_version": null,
@@ -46,6 +48,8 @@
     "record": "ggps2025",
     "repository_name": "10.5281-zenodo.23920556",
     "source": {
+      "bytes": 94345,
+      "sha256": "04db4d84ada6184ca8b0deaaa870a6f111aff5ece8d8f670ff8f4d86ec4c4d83",
       "url": "/api/v1/collected-papers/ggps2025/files/source?version=1"
     },
     "title": "Counterexamples to Conjecture 25 and Remark 6 of Garrappa–Gerhold–Popolizio–Simon: Global modulus lower bounds in arXiv:2410.11852v4",
