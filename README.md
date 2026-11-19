@@ -27,3 +27,41 @@ Haobo Ma, Wenlin Zhang (2026). Counterexamples to Conjecture 25 and Remark 6 of 
 ## Contributions
 
 Original authors are listed above. Formalization contributors and attribution are retained in `formalization/nodes.json`; repository pull requests do not confer verification or credit. Submit formalization attempts through the Mathesis attempt path described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+<!-- Mathesis generated repository guide; refresh with paper.py front. -->
+
+## Reading and materials
+
+[Paper site](https://papers.trureturing.org/10.5281-zenodo.23920556/) · [Frozen PDF](paper.pdf) · [Citation](CITATION.cff)
+
+[中文阅读](https://papers.trureturing.org/10.5281-zenodo.23920556/ggps2025/zh/) · [Read in English](https://papers.trureturing.org/10.5281-zenodo.23920556/ggps2025/en/)
+
+[Slides](https://papers.trureturing.org/10.5281-zenodo.23920556/ggps2025/slides/) ([sources](books/ggps2025/slides/)) · [Videos](https://papers.trureturing.org/10.5281-zenodo.23920556/ggps2025/films/) ([sources](books/ggps2025/films/))
+
+These are publication routes; available built materials are inventoried in [mathesis-materials.json](https://papers.trureturing.org/10.5281-zenodo.23920556/mathesis-materials.json).
+
+## Book and formalization
+
+Catalog formalization status above is separate from the statement comparisons below. A nearby declaration does not verify the complete written result.
+
+| Book result | Comparison with formal base | Compared declaration |
+|---|---|---|
+| `ray-family` | variant | `D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.source_endpoint_scaled_limit` |
+| `closed-family` | same | `D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.source_closed_beta_family` |
+| `cm-separation` | variant | `D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.source_closed_beta_family` |
+| `rational-witness` | variant | `D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.result` |
+| `kummer-negation` | same | `D5/S3/Analytic/KummerModulusLowerBound/Result.result` |
+| `kummer-witness` | variant | `D5/S3/Analytic/KummerModulusLowerBound/Result.result` |
+
+Book stage: **complete**; 0 pending claims. [Statement comparisons](.mathesis/REVIEW.md).
+
+## Repository map
+
+| Zone | Location |
+|---|---|
+| Paper record | `paper.json`, `CITATION.cff`, `paper.pdf`, `manuscript/`, `formalization/nodes.json`, `LICENSES/`, `.mathesis/` |
+| Content | `books/ggps2025/`: Chinese/English text, figures, visualizations, videos, slides, assets |
+| Machinery | Upstream and layer managed paths; update with `tbook template update` |
+| Repository front | This README, changelog, contribution guide, licence, project/site/pin configuration, `template.d/` |
+
+See [the enforced layout](docs/layer-mathesis/LAYOUT.md). Preparation run records and built outputs stay outside the committed tree.

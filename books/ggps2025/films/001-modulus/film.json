@@ -1,0 +1,27 @@
+{
+  "id": "001-modulus",
+  "title": "Why moving off the real axis breaks a bound",
+  "title_zh": "离开实轴，下界为何失效",
+  "subject": "https://doi.org/10.5281/zenodo.23920557",
+  "publication_basis": "pinned",
+  "released": "2026-11-15",
+  "duration": "2:45",
+  "resolution": "1280x720@30",
+  "style": "trureturing cyberpunk · deterministic canvas",
+  "narration": {
+    "language": "en",
+    "engine": "Kokoro-82M v1.0 (onnx)",
+    "voice": "af_heart"
+  },
+  "subtitles": [
+    "zh",
+    "en"
+  ],
+  "lean": [],
+  "outputs": {
+    "narrated_720p": "ggps2025_001_720p_narrated.mp4",
+    "cover": "ggps2025_001_cover.jpg"
+  },
+  "summary": "Projection geometry, a disappearing coefficient and an exact quadratic zero explain two failed global modulus bounds.",
+  "summary_zh": "用投影几何、消失的系数与精确二次零点解释两个全局模下界为何失效。"
+}

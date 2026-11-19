@@ -1,0 +1,185 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{复数平面上的下界为何失效}
+\author{Haobo Ma \and Wenlin Zhang}
+\begin{document}
+% Manuscript: title and source §1
+\begin{frame}
+\titlepage
+\note{本报告解释作者原文第 1 版。先比较复数点与实轴投影，再说明消失的系数怎样产生严格的模长差。}
+\end{frame}
+% Manuscript: source §§1--4
+\begin{frame}{路线}
+\tableofcontents
+\note{从全局问题走向平方倒数机制，再看两个明确例子与来源。}
+\end{frame}
+\section{问题}
+% Manuscript: Source §1, the two questions
+\begin{frame}{一个长度比较}
+$z=x+iy$ 是平面上的点，$|z|=\sqrt{x^2+y^2}$。
+\[
+|e^{x+iy}|=e^x.
+\]
+对其他函数是否总有 $|f(x+iy)|\ge f(x)$？
+\begin{alertblock}{论文的回答}
+Mittag--Leffler 函数的候选参数区间中，每个 $1{<} \alpha{<} 2$ 都有失败；Kummer 函数还有精确零点反例。
+\end{alertblock}
+\note{先区分输入长度与输出长度。右边 $f(x)$ 没有绝对值，若为负则下界自动成立。一个有效反例要让它为正。}
+\end{frame}
+% Manuscript: Source §1, series and Conjecture 25
+\begin{frame}{调节指数级数}
+\[
+E_{\alpha,\beta}(z)=\sum_{k=0}^{\infty}\frac{z^k}{\Gamma(\alpha k+\beta)},\quad\alpha>0.
+\]
+$\Gamma(n+1)=n!$，$\Gamma(1/2)=\sqrt\pi$；$(\alpha,\beta)=(1,1)$ 给出 $e^z$。
+\begin{block}{GGPS 猜想 25（arXiv v4，第 18 页）}
+对 $1{<} \alpha{<} 2,\ \beta\ge0$，全局下界 $G(\alpha,\beta)$ 被猜测等价于 $\beta\in[\alpha-1,\alpha]$，也等价于倒数的完全单调性。
+\end{block}
+\note{定义 $G$ 为对所有复数 $z$ 成立的 $|E_{\alpha,\beta}(z)|\ge E_{\alpha,\beta}(\operatorname{Re}z)$。倒数 Gamma 在非正整数极点取零。原问题归功于 R. Garrappa、S. Gerhold、M. Popolizio、T. Simon。}
+\end{frame}
+\section{机制}
+% Manuscript: Source Theorem 1; book closed-family
+\begin{frame}{主结论：同一点，一段参数}
+\begin{bookresult}{closed-family}
+对每个 $1{<} \alpha{<} 2$，上述收敛级数族存在 $z$ 与 $0{<} \varepsilon{<} 1$，使 $\operatorname{Im}z>0$ 且
+\[
+z=r\left(-1+i\tan\frac{\pi(2-\alpha)}4\right),\quad r>0,
+\]
+并对所有 $\beta\in[\alpha-1,\alpha-1+\varepsilon]$ 有
+\[
+|E_{\alpha,\beta}(z)|{<} E_{\alpha,\beta}(\operatorname{Re}z).
+\]
+\end{bookresult}
+\note{先选 $\alpha$，再选一个 $z$，最后得到一段 $\beta$。不是每次改变 $\beta$ 都换一个点。此帧只陈述精确公共 Lean 闭区间结论；完整原定理的最终射线量词在后页单列。}
+\end{frame}
+% Manuscript: Source Theorem 1 proof; book appendix sector-estimate
+\begin{frame}{为何平方倒数出现}
+在 $\beta=\alpha-1$，靠近负实轴的有效扇形内：
+\[
+E_{\alpha,\alpha-1}(z)=\frac{C_\alpha}{z^2}+O(|z|^{-3}),
+\]
+\[
+C_\alpha=-\frac1{\Gamma(-\alpha-1)}>0.
+\]
+$z^{-1}$ 系数为 $-1/\Gamma(-1)=0$。
+\begin{block}{几何机制}
+同一横坐标处，离轴点的模更大；平方倒数的模更小。
+\end{block}
+\note{这是原文的 Hankel 轮廓展开，余项论证在书中附录。不是在所有方向使用展开。$C_\alpha=\alpha(\alpha^2-1)/\Gamma(2-\alpha)$，故在给定开区间严格为正。}
+\end{frame}
+% Manuscript: Source Theorem 1; book ray-family
+\begin{frame}{严格间隙给出阈值}
+\begin{bookresult}{ray-family}
+固定 $1{<} \alpha{<} 2$，令 $t=\tan(\pi(2-\alpha)/4)>0$，$w=-1+it$。存在 $R>0$，使每个实数 $r>R$ 有
+\[
+|E_{\alpha,\alpha-1}(rw)|{<} E_{\alpha,\alpha-1}(-r).
+\]
+同一个充分大的点还支持前述闭参数区间。
+\end{bookresult}
+\[
+r^2 E(-r)\to C_\alpha,\qquad r^2|E(rw)|\to\frac{C_\alpha}{1+t^2}.
+\]
+\note{最后一行缩写 $E=E_{\alpha,\alpha-1}$。设两个极限间隙为 $g>0$；两个误差都小于 $g/3$ 时，严格比较成立。每个 $r>R$ 均有效。它在数学上是已有极限的直接推论，完整精确公开声明的接续工作复用该证明。}
+\end{frame}
+% Manuscript: Source Theorem 1 proof; Corollary 2
+\begin{frame}{从边界进入内部}
+固定一个严格失败的 $z$，令
+\[
+D(\beta)=E_{\alpha,\beta}(\operatorname{Re}z)-|E_{\alpha,\beta}(z)|.
+\]
+$D$ 连续且 $D(\alpha-1)>0$，所以一段闭区间内 $D>0$。
+\begin{bookresult}{cm-separation}
+每个 $1{<} \alpha{<} 2$ 都有内部参数 $\beta\in(\alpha-1,\alpha)$：倒数为正且完全单调，归一化对数为 Bernstein 函数，但 $G$ 失败。
+\end{bookresult}
+\note{取 $\beta=\alpha-1+\varepsilon/2$。完全单调指正光滑函数满足 $(-1)^n f^{(n)}(x)\ge0$，所有 $n\ge0,x>0$。Bernstein 函数非负且导数完全单调。倒数性质来自 GGPS 命题 3；归一化对数 $\log(\Gamma(\beta)E_{\alpha,\beta})$ 来自备注 4(a)。连续性由紧参数区间上一致收敛保证。}
+\end{frame}
+\section{例子}
+% Manuscript: Source Proposition 3; book rational-witness
+\begin{frame}{一个具体点}
+\begin{bookresult}{rational-witness}
+在 $z_*=-115+10i$，有
+\[
+|E_{3/2,1/2}(z_*)|{<} 11\cdot10^{-6}+4\cdot10^{-13},
+\]
+\[
+11\cdot10^{-6}+4\cdot10^{-13}{<} 3\cdot10^{-5}-4\cdot10^{-13},
+\]
+\[
+3\cdot10^{-5}-4\cdot10^{-13}{<} E_{3/2,1/2}(-115).
+\]
+\end{bookresult}
+前 64 项：有理区间；剩余项：严格几何尾界。
+\note{分行保留三个严格比较，避免把长链挤成一行。误差远小于比较间隙。有限项用有理数端点包围，几何尾界控制剩余级数。完整尾项论证在附录。}
+\end{frame}
+% Manuscript: Source §4, Proposition 4
+\begin{frame}{把级数化成二次多项式}
+$M(a,b,z)=\sum_{n\ge0}(a)_n z^n/((b)_n n!)$，其中 $b$ 不为非正整数。
+\[
+\frac{(1/2)_n}{(-3/2)_n}=1-\frac43n+\frac43n(n-1),\quad n\ge0.
+\]
+利用指数级数换指标：
+\[
+M(1/2,-3/2,z)=e^z(1-4z/3+4z^2/3).
+\]
+这是所有指标的代数恒等式。
+\note{$(a)_0=1$，$(a)_n=a(a+1)\cdots(a+n-1)$。用 $(-3/2)_{n+2}$ 的两种乘法分解得到系数恒等式，也覆盖 $n=0,1$。绝对收敛许可合并级数。}
+\end{frame}
+% Manuscript: Source Proposition 4; book kummer-witness
+\begin{frame}{零与正数}
+\begin{bookresult}{kummer-witness}
+$a=1/2,d=2,b=-3/2$ 合法。取 $z_0=1/2+i\sqrt2/2$，则
+\[
+|M(1/2,-3/2,z_0)|=0,
+\]
+\[
+M(1/2,-3/2,1/2)=\frac23e^{1/2}>0.
+\]
+\end{bookresult}
+\begin{bookresult}{kummer-negation}
+因此，对所有合法 $a,d>0$ 与所有复数 $z$ 成立的全局下界断言为假。
+\end{bookresult}
+\note{求根公式给出所写复根。公共 Lean 全称否定与明确零点声明分开标示；不要把后者的额外信息装进前者的形式范围。}
+\end{frame}
+\section{来源}
+% Manuscript: Source §4 prior attribution; §5 coverage
+\begin{frame}{来源与边界}
+\begin{itemize}
+\item GGPS 提出问题，并证明正轴完全单调性。
+\item Pudim AI Project（v016，2026-06-14）更早以 $a=1,d=5/2$ 给出备注 6 的局部反例。
+\item 本论文给出全 $1{<} \alpha{<} 2$ 的 Mittag--Leffler 族、严格有限证书及另一个 Kummer 精确零点。
+\item 左半平面反例不推翻右半平面下界；$\alpha=1,2$ 不在族定理内。
+\end{itemize}
+\small 原文版本 DOI：\href{https://doi.org/10.5281/zenodo.23920557}{10.5281/zenodo.23920557}。
+\note{原问题文献为 R. Garrappa 等，JMAA 551(1),129588，DOI 10.1016/j.jmaa.2025.129588；定位采用 arXiv v4。更早反例的实系数展开给出 $|M(1,-3/2,is)|^2=1-20s^2/9+O(s^4)$，故小的非零 $s$ 处失败。}
+\end{frame}
+\appendix
+\section{补充}
+% Manuscript: Source Theorem 1 proof; book appendix
+\begin{frame}{轮廓如何控制误差}
+取 $\pi/2{<} \theta{<} \pi/\alpha$，且 $|\arg z|>\alpha\theta$。
+\[
+E_{\alpha,\beta}(z)=\frac1{2\pi i}\int_H\frac{e^u u^{\alpha-\beta}}{u^\alpha-z}\,du.
+\]
+$\beta=\alpha-1$ 时分子为 $u$。展开分母至 $z^{-2}$，余项有界于
+\[
+\frac{|z|^{-3}}{2\pi c}\int_H|e^u||u|^{2\alpha+1}|du|.
+\]
+$H=H_{\theta,1}$；指数衰减使积分有限。
+\note{轮廓沿两条射线与单位圆弧。角度分离控制分母，不穿越极点。DLMF 5.9.2 给出 Hankel 公式。书中附录保留几何级数交换与缩小轮廓半径的理由。}
+\end{frame}
+% Manuscript: Source Proposition 3 proof; book appendix
+\begin{frame}{无限尾项不能省略}
+令 $T_k(z)=z^k/\Gamma(3k/2+1/2)$，$s=3k/2+1/2$。
+\[
+T_{k+2}=\frac{z^2T_k}{s(s+1)(s+2)},\quad k\ge0.
+\]
+当 $|z|\le125,k\ge64$，有 $|T_{k+2}|\le|T_k|/2$。
+\[
+|T_{64}|{<} 10^{-13},\qquad |T_{65}|{<} \tfrac34\,10^{-13}.
+\]
+两个奇偶几何尾项之和小于 $4\cdot10^{-13}$。
+\note{把指标范围写在递推旁边。每个奇偶尾项的总和至多初始项的两倍。两个输入模都小于 125，所以同一界控制它们。有限和的有理包围区间见书中附录。}
+\end{frame}
+% Manuscript: exact result evidence
+\FormalVerification
+\end{document}

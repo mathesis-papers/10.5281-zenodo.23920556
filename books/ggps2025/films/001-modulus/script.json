@@ -1,0 +1,176 @@
+{
+  "voice": "af_heart",
+  "speed": 0.94,
+  "say": {
+    "Mittag Leffler": "Mittag Leffler",
+    "Kummer": "Koomer"
+  },
+  "music": {
+    "bpm": 84,
+    "progression": "d-minor"
+  },
+  "scenes": [
+    {
+      "id": "question",
+      "name": "THE QUESTION",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.4,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Keep the horizontal coordinate fixed, and move a point off the real axis. Must the length of a function value increase?",
+          "固定横坐标，把点移离实轴。函数输出的长度一定增大吗？"
+        ],
+        [
+          "For the exponential, the length stays exactly the same. This paper shows why a proposed extension fails.",
+          "指数函数的输出长度恰好不变。这篇论文说明一种推广为何失效。"
+        ],
+        [
+          "The comparison uses the real function value without an absolute value. Our counterexamples make that value positive.",
+          "比较右边是未取绝对值的实函数值。这里的反例让它为正。"
+        ]
+      ]
+    },
+    {
+      "id": "series",
+      "name": "A MISSING TERM",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.4,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "The Mittag Leffler function changes the factorial denominators in the exponential series using two parameters, alpha and beta.",
+          "Mittag–Leffler 函数用两个参数 α、β 改变指数级数的阶乘分母。"
+        ],
+        [
+          "For every alpha strictly between one and two, choose beta equal to alpha minus one. A leading coefficient vanishes exactly.",
+          "对每个严格介于 1 与 2 之间的 α，取 β 等于 α−1。一个首项系数恰好消失。"
+        ],
+        [
+          "Near the negative real direction, the function behaves like a positive constant divided by z squared, with a smaller controlled error.",
+          "在靠近负实轴的方向上，函数主项是正常数除以 z 的平方，并有更小的受控误差。"
+        ]
+      ]
+    },
+    {
+      "id": "geometry",
+      "name": "THE INVERSE SQUARE",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.4,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Compare minus r with the point r times minus one plus i t, where t is a fixed positive tilt chosen inside the valid sector.",
+          "比较 −r 与 r(−1+it)，其中正倾斜量 t 固定，并选在展开有效的扇形内。"
+        ],
+        [
+          "The second input is farther from the origin. Its inverse square is therefore smaller in length.",
+          "第二个输入离原点更远，因此平方倒数的模更小。"
+        ],
+        [
+          "After scaling by r squared, the two limits have a strict gap. The error shrinks, so every sufficiently large radius breaks the bound.",
+          "乘以 r 的平方后，两个极限有严格间隙。误差衰减，因此所有充分大的半径都违反下界。"
+        ]
+      ]
+    },
+    {
+      "id": "continuity",
+      "name": "ONE POINT, AN INTERVAL",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.4,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Now keep one successful point fixed, and vary beta. The difference between the real axis value and the off axis length is continuous.",
+          "现在固定一个反例点，改变 β。实轴值与离轴模的差随 β 连续变化。"
+        ],
+        [
+          "A strictly positive difference stays positive nearby. One point therefore works on a closed interval beginning at alpha minus one.",
+          "严格正的差值在附近仍为正，因此同一点适用于从 α−1 开始的一段闭区间。"
+        ],
+        [
+          "The interval enters the interior of the proposed parameter range. Known complete monotonicity on the positive axis does not rescue the global complex bound.",
+          "该区间进入候选范围内部。正实轴上已知的完全单调性，仍不能保证复平面的全局下界。"
+        ]
+      ]
+    },
+    {
+      "id": "certificate",
+      "name": "A CERTIFIED MARGIN",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.4,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "A concrete example uses alpha three halves, beta one half, and the point minus one hundred fifteen plus ten i.",
+          "具体例子取 α=3/2、β=1/2，点为 −115+10i。"
+        ],
+        [
+          "The first sixty four terms are enclosed using rational arithmetic. The remaining even and odd tails shrink geometrically.",
+          "前 64 项用有理数区间包围，余下的奇偶尾项分别按几何比例衰减。"
+        ],
+        [
+          "The total tail is below four times ten to the minus thirteen. The two bounds are separated by a much larger margin.",
+          "总尾项小于 4 乘 10 的 −13 次方，两边界限的间隙远大于这个误差。"
+        ]
+      ]
+    },
+    {
+      "id": "kummer",
+      "name": "AN EXACT ZERO",
+      "lead": 1.0,
+      "tail": 0.8,
+      "music": [
+        0.4,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "A related Kummer function becomes an exponential times a quadratic. Its complex root makes the output exactly zero.",
+          "另一个 Kummer 函数化成指数乘二次多项式。复根让输出恰好为零。"
+        ],
+        [
+          "At the real projection, the polynomial is two thirds, so the real function value is strictly positive. Zero is smaller: the bound fails.",
+          "在实轴投影处，多项式等于 2/3，实函数值严格为正。零小于它，下界失效。"
+        ],
+        [
+          "Pudim AI Project gave an earlier local Kummer counterexample. Ma and Zhang give this different exact zero and the Mittag Leffler family.",
+          "Pudim AI Project 更早给出 Kummer 的局部反例。Ma 与 Zhang 给出这里不同的精确零点及 Mittag–Leffler 反例族。"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "book": "ggps2025",
+  "pending_claims": [],
+  "results": {
+    "ray-family": {
+      "claim": "collected:ggps2025:1:s1",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.source_endpoint_scaled_limit",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Theorem 1 — eventual endpoint ray deficit",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/165"
+      }
+    },
+    "closed-family": {
+      "claim": "collected:ggps2025:1:s1",
+      "gids": [
+        "D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.source_closed_beta_family"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.source_closed_beta_family",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "cm-separation": {
+      "claim": "collected:ggps2025:1:s2",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.source_closed_beta_family",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 2 — CM and Bernstein separation",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/166"
+      }
+    },
+    "rational-witness": {
+      "claim": "collected:ggps2025:1:s3",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Proposition 3 — strict rational certificate",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/167"
+      }
+    },
+    "kummer-negation": {
+      "claim": "collected:ggps2025:1:s4",
+      "gids": [
+        "D5/S3/Analytic/KummerModulusLowerBound/Result.result"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Analytic/KummerModulusLowerBound/Result.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "kummer-witness": {
+      "claim": "collected:ggps2025:1:s4",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Analytic/KummerModulusLowerBound/Result.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Proposition 4 — explicit Kummer zero",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/168"
+      }
+    }
+  },
+  "stage": "complete",
+  "titles": {
+    "en": "Counterexamples to Conjecture 25 and Remark 6 of Garrappa–Gerhold–Popolizio–Simon: Global modulus lower bounds in arXiv:2410.11852v4",
+    "zh": "Counterexamples to Conjecture 25 and Remark 6 of Garrappa–Gerhold–Popolizio–Simon: Global modulus lower bounds in arXiv:2410.11852v4"
+  },
+  "version": 1,
+  "work": "ggps2025"
+}

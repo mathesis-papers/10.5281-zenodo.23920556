@@ -1,0 +1,185 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{Why a complex lower bound fails}
+\author{Haobo Ma \and Wenlin Zhang}
+\begin{document}
+% Manuscript: title and source §1
+\begin{frame}
+\titlepage
+\note{This talk explains version 1 of the authors' paper. Begin with the comparison between a complex point and its real projection, then show how a disappearing coefficient produces a strict modulus deficit.}
+\end{frame}
+% Manuscript: source §§1--4
+\begin{frame}{Route}
+\tableofcontents
+\note{Move from the global question to the inverse-square mechanism, then to explicit examples and attribution.}
+\end{frame}
+\section{Question}
+% Manuscript: Source §1, the two questions
+\begin{frame}{A comparison of lengths}
+A point is $z=x+iy$, with length $|z|=\sqrt{x^2+y^2}$.
+\[
+|e^{x+iy}|=e^x.
+\]
+Must $|f(x+iy)|\ge f(x)$ hold for other functions?
+\begin{alertblock}{The answer in this paper}
+For every $1{<} \alpha{<} 2$, a proposed Mittag--Leffler parameter interval contains failures. A Kummer function has an exact-zero witness.
+\end{alertblock}
+\note{Distinguish input length from output length. The right side $f(x)$ has no absolute value: if it is negative, the inequality is automatic. The witnesses here have a positive real-axis value.}
+\end{frame}
+% Manuscript: Source §1, series and Conjecture 25
+\begin{frame}{Adjusting the exponential series}
+\[
+E_{\alpha,\beta}(z)=\sum_{k=0}^{\infty}\frac{z^k}{\Gamma(\alpha k+\beta)},\quad\alpha>0.
+\]
+$\Gamma(n+1)=n!$, $\Gamma(1/2)=\sqrt\pi$; $(\alpha,\beta)=(1,1)$ gives $e^z$.
+\begin{block}{GGPS Conjecture 25 (arXiv v4, p. 18)}
+For $1{<} \alpha{<} 2,\ \beta\ge0$, the global bound $G(\alpha,\beta)$ was conjectured equivalent to $\beta\in[\alpha-1,\alpha]$ and to complete monotonicity of the reciprocal.
+\end{block}
+\note{Define $G$ as $|E_{\alpha,\beta}(z)|\ge E_{\alpha,\beta}(\operatorname{Re}z)$ for every complex $z$. Reciprocal Gamma is zero at nonpositive integer poles. Credit the question to R. Garrappa, S. Gerhold, M. Popolizio and T. Simon.}
+\end{frame}
+\section{Mechanism}
+% Manuscript: Source Theorem 1; book closed-family
+\begin{frame}{Main conclusion: one point, an interval}
+\begin{bookresult}{closed-family}
+For every $1{<} \alpha{<} 2$, the convergent source family has $z$ and $0{<} \varepsilon{<} 1$, with $\operatorname{Im}z>0$ and
+\[
+z=r\left(-1+i\tan\frac{\pi(2-\alpha)}4\right),\quad r>0,
+\]
+such that every $\beta\in[\alpha-1,\alpha-1+\varepsilon]$ satisfies
+\[
+|E_{\alpha,\beta}(z)|{<} E_{\alpha,\beta}(\operatorname{Re}z).
+\]
+\end{bookresult}
+\note{The quantifier order matters: choose $\alpha$, then one point $z$, then an interval of $\beta$. This frame states the exact public closed-interval theorem. The full source theorem also has an eventual-ray conclusion, stated separately later.}
+\end{frame}
+% Manuscript: Source Theorem 1 proof; book appendix sector-estimate
+\begin{frame}{Why an inverse square appears}
+At $\beta=\alpha-1$, in a valid sector near the negative real axis:
+\[
+E_{\alpha,\alpha-1}(z)=\frac{C_\alpha}{z^2}+O(|z|^{-3}),
+\]
+\[
+C_\alpha=-\frac1{\Gamma(-\alpha-1)}>0.
+\]
+The $z^{-1}$ coefficient is $-1/\Gamma(-1)=0$.
+\begin{block}{The geometry}
+At a fixed horizontal coordinate, moving off-axis increases input modulus and decreases the inverse-square modulus.
+\end{block}
+\note{This is the manuscript's Hankel-contour expansion, with the remainder proved in the reading appendix. It is not asserted in every direction. The identity $C_\alpha=\alpha(\alpha^2-1)/\Gamma(2-\alpha)$ proves positivity on the stated open interval.}
+\end{frame}
+% Manuscript: Source Theorem 1; book ray-family
+\begin{frame}{A strict gap gives a threshold}
+\begin{bookresult}{ray-family}
+Fix $1{<} \alpha{<} 2$, put $t=\tan(\pi(2-\alpha)/4)>0$ and $w=-1+it$. There is $R>0$ such that every real $r>R$ satisfies
+\[
+|E_{\alpha,\alpha-1}(rw)|{<} E_{\alpha,\alpha-1}(-r).
+\]
+One such point also supports the closed parameter interval.
+\end{bookresult}
+\[
+r^2 E(-r)\to C_\alpha,\qquad r^2|E(rw)|\to\frac{C_\alpha}{1+t^2}.
+\]
+\note{In the last line abbreviate $E=E_{\alpha,\alpha-1}$. Let $g>0$ be the gap between the limits. Errors smaller than $g/3$ preserve the strict ordering for every $r>R$. Mathematically this is an immediate consequence of the existing limits; the focused formalization request reuses them.}
+\end{frame}
+% Manuscript: Source Theorem 1 proof; Corollary 2
+\begin{frame}{From endpoint to interior}
+Fix one strict failure $z$, and put
+\[
+D(\beta)=E_{\alpha,\beta}(\operatorname{Re}z)-|E_{\alpha,\beta}(z)|.
+\]
+Continuity and $D(\alpha-1)>0$ keep $D>0$ on a closed interval.
+\begin{bookresult}{cm-separation}
+For every $1{<} \alpha{<} 2$, an interior $\beta\in(\alpha-1,\alpha)$ has a positive CM reciprocal and a Bernstein normalized logarithm, while $G$ fails.
+\end{bookresult}
+\note{Choose $\beta=\alpha-1+\varepsilon/2$. A positive smooth function is CM when $(-1)^n f^{(n)}(x)\ge0$ for all $n\ge0,x>0$. A Bernstein function is nonnegative with CM derivative. The reciprocal property is GGPS Proposition 3; the normalized logarithm $\log(\Gamma(\beta)E_{\alpha,\beta})$ is Remark 4(a). A uniform series majorant gives the continuity used here.}
+\end{frame}
+\section{Examples}
+% Manuscript: Source Proposition 3; book rational-witness
+\begin{frame}{A concrete point}
+\begin{bookresult}{rational-witness}
+At $z_*=-115+10i$,
+\[
+|E_{3/2,1/2}(z_*)|{<} 11\cdot10^{-6}+4\cdot10^{-13},
+\]
+\[
+11\cdot10^{-6}+4\cdot10^{-13}{<} 3\cdot10^{-5}-4\cdot10^{-13},
+\]
+\[
+3\cdot10^{-5}-4\cdot10^{-13}{<} E_{3/2,1/2}(-115).
+\]
+\end{bookresult}
+First 64 terms: rational intervals. Rest: a strict geometric tail bound.
+\note{Separate the strict comparisons rather than squeezing the chain onto one line. The error is much smaller than the gap. The finite enclosures use rational endpoints; the geometric tail bounds the remainder of the series. The appendix supplies the infinite-tail argument.}
+\end{frame}
+% Manuscript: Source §4, Proposition 4
+\begin{frame}{Reduce the series to a quadratic}
+$M(a,b,z)=\sum_{n\ge0}(a)_n z^n/((b)_n n!)$, with $b$ outside the nonpositive integers.
+\[
+\frac{(1/2)_n}{(-3/2)_n}=1-\frac43n+\frac43n(n-1),\quad n\ge0.
+\]
+Shift indices in the exponential series:
+\[
+M(1/2,-3/2,z)=e^z(1-4z/3+4z^2/3).
+\]
+The coefficient identity holds at every index.
+\note{Define $(a)_0=1$ and $(a)_n=a(a+1)\cdots(a+n-1)$. Factor $(-3/2)_{n+2}$ in two ways to get the identity, including $n=0,1$. Absolute convergence licenses the series manipulations.}
+\end{frame}
+% Manuscript: Source Proposition 4; book kummer-witness
+\begin{frame}{Zero versus a positive value}
+\begin{bookresult}{kummer-witness}
+$a=1/2,d=2,b=-3/2$ is admissible. At $z_0=1/2+i\sqrt2/2$,
+\[
+|M(1/2,-3/2,z_0)|=0,
+\]
+\[
+M(1/2,-3/2,1/2)=\frac23e^{1/2}>0.
+\]
+\end{bookresult}
+\begin{bookresult}{kummer-negation}
+The global lower-bound assertion for all admissible $a,d>0$ and all complex $z$ is false.
+\end{bookresult}
+\note{The quadratic formula gives the stated complex root. Keep the public universal negation distinct from the explicit-zero statement. The extra witness information is not placed inside the formal scope of the negation.}
+\end{frame}
+\section{Sources}
+% Manuscript: Source §4 prior attribution; §5 coverage
+\begin{frame}{Attribution and scope}
+\begin{itemize}
+\item GGPS posed the questions and proved positive-axis complete monotonicity.
+\item Pudim AI Project (v016, 2026-06-14) earlier refuted Remark 6 locally at $a=1,d=5/2$.
+\item This paper supplies the all-$\alpha$ family, a strict finite certificate and a different exact Kummer zero.
+\item Left-half-plane failures preserve right-half-plane bounds; $\alpha=1,2$ are outside the family theorem.
+\end{itemize}
+\small Paper version DOI: \href{https://doi.org/10.5281/zenodo.23920557}{10.5281/zenodo.23920557}.
+\note{The source question is R. Garrappa et al., JMAA 551(1),129588, DOI 10.1016/j.jmaa.2025.129588; locators use arXiv v4. The earlier real-coefficient example gives $|M(1,-3/2,is)|^2=1-20s^2/9+O(s^4)$, hence failure for sufficiently small nonzero $s$.}
+\end{frame}
+\appendix
+\section{Appendix}
+% Manuscript: Source Theorem 1 proof; book appendix
+\begin{frame}{How the contour controls error}
+Choose $\pi/2{<} \theta{<} \pi/\alpha$ and $|\arg z|>\alpha\theta$.
+\[
+E_{\alpha,\beta}(z)=\frac1{2\pi i}\int_H\frac{e^u u^{\alpha-\beta}}{u^\alpha-z}\,du.
+\]
+At $\beta=\alpha-1$ the numerator is $u$. Expanding through $z^{-2}$ bounds the remainder by
+\[
+\frac{|z|^{-3}}{2\pi c}\int_H|e^u||u|^{2\alpha+1}|du|.
+\]
+Here $H=H_{\theta,1}$; exponential decay makes the integral finite.
+\note{The contour consists of two rays and a unit circular arc. Angular separation controls the denominator, and deformation crosses no pole. DLMF 5.9.2 gives Hankel's formula. The reading appendix explains termwise integration and the contour-radius change.}
+\end{frame}
+% Manuscript: Source Proposition 3 proof; book appendix
+\begin{frame}{The infinite tail matters}
+Put $T_k(z)=z^k/\Gamma(3k/2+1/2)$ and $s=3k/2+1/2$.
+\[
+T_{k+2}=\frac{z^2T_k}{s(s+1)(s+2)},\quad k\ge0.
+\]
+For $|z|\le125,k\ge64$, $|T_{k+2}|\le|T_k|/2$.
+\[
+|T_{64}|{<} 10^{-13},\qquad |T_{65}|{<} \tfrac34\,10^{-13}.
+\]
+The two parity tails sum to less than $4\cdot10^{-13}$.
+\note{Keep the recurrence index range beside the formula. Each parity tail is at most twice its initial term. Both input moduli are below 125. The reading appendix records the rational enclosures for the finite sum.}
+\end{frame}
+% Manuscript: exact result evidence
+\FormalVerification
+\end{document}
