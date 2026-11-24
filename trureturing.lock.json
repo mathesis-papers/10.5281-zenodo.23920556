@@ -2,23 +2,23 @@
   "schema": "trureturing-books.lock.v1",
   "repo": "the-omega-institute/trureturing",
   "branch": "dev",
-  "commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
-  "pinned_at": "2026-11-08T12:32:04Z",
+  "commit": "b05ceb497bd134559c3c0f84d925c1643f7c65cb",
+  "pinned_at": "2026-11-24T06:47:20Z",
   "declarations": {
     "D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation.source_closed_beta_family": {
       "module": "D5/S3/Analytic/Asymptotics/MittagLefflerModulusRefutation",
       "name": "D5.S3.Analytic.Asymptotics.MittagLefflerModulusRefutation.source_closed_beta_family",
       "kind": "theorem",
-      "statement_id": "sha256:c955344051d76122290a7dc1720630904839ace29593e56554e84abb8dbef991",
-      "line": 712,
+      "statement_id": "sha256:ca57f54b7922bcf70b6b0927bdb38edcb0f3cfbc7f0a57fc8bab1f4d121e780a",
+      "line": 723,
       "signature": "theorem source_closed_beta_family {E : ℝ → ℝ → ℂ → ℂ} (hE : IsSourceSeries E) {α : ℝ} (hα : 1 < α) (hα2 : α < 2) : ∃ z : ℂ, ∃ ε : ℝ, 0 < ε ∧ ε < 1 ∧ 0 < z.im ∧ (∃ r : ℝ, 0 < r ∧ z = (r : ℂ) * rayDirection α) ∧ ∀ β : ℝ, β ∈ Set.Icc (α - 1) (α - 1 + ε) → ‖E α β z‖ < (E α β (z.re : ℂ)).re"
     },
     "D5/S3/Analytic/KummerModulusLowerBound/Result.result": {
       "module": "D5/S3/Analytic/KummerModulusLowerBound/Result",
       "name": "D5.S3.Analytic.KummerModulusLowerBound.Result.result",
       "kind": "theorem",
-      "statement_id": "sha256:c8bc69c9d77a2c9ca510a47259a1881e80eb8e3368f0e41175ad3a6b94dc0041",
-      "line": 141,
+      "statement_id": "sha256:50a821aa8a1bd9808c5dcc804e5d8e313f54c22df72c3a39a34bd75c4f84109e",
+      "line": 142,
       "signature": "theorem result : ¬ claim"
     }
   }
